@@ -1,0 +1,80 @@
+* *** JUST COLORS *** *	
+COMPONENTS
+♣BODY
+	BACKGROUND		: rgb(32, 33, 37)
+	COLOR			: rgb(87, 89, 92)
+
+♣MENU 
+	BACKGROUND		: rgb(54, 55, 59)
+	COLOR			: rgb(191, 192, 195)
+	SELECTED-COLOR		: rgb(134, 180, 249)
+
+♣MENSSAGE
+	BACKGROUND		: rgb(50,50,50)
+	COLOR			: rgb(255, 255, 255)
+
+♣BUTTON
+	BACKGROUND		: rgb(137, 180, 248)
+	COLOR			: rgb(31, 23, 12)
+
+♣TOP
+	BACKGROUND		: transparent
+	COLOR			: rgb(255,255,255)
+	BACKGROUND-SCROLLED-DOWN: rgb(50, 51, 54)
+
+♣MODAL
+	BACKGROUND		: rgb(48, 48, 48)
+	COLOR			: rgb(155, 160, 166)
+	SELECTED-COLOR		: rgb(255, 255, 255)
+	SUB-COMPONENTS
+		☻BUTTON			
+			COLOR		: =COMPONENT-BUTTON
+			BACKGROUND	: transparent
+
+♣SECTION
+								ACTIVE		INACTIVE		OVER-ACTIVE
+	☻MINIMIZED
+		BACKGROUND				: transparent		transparent		rgb(54, 55, 57)
+			SUB-COMPONENTS
+				►TIME		
+					COLOR		: rgb(134, 176, 242)	rgb(155, 160, 166)
+
+				►TOGGLE-BUTTON	 
+					COLOR		: rgb(134, 176, 242)	rgb(185, 188, 193)
+					SHADOW-COLOR	: rgb(84, 106, 142)	rgb(122, 123, 127)
+
+				►COMMON ELEMENTS TEXT	
+					COLOR		: rgb(255, 255, 255)	rgb(155, 160, 166)
+
+				►COMMON ELEMENTS DOWN BUTTON 
+					COLOR		: rgb(255, 255, 255)	rgb(255, 255, 255)
+					
+	☻MAZIMIZED
+		BACKGROUND				: rgb(42, 43, 47)	rgb(42, 43, 47)
+			SUB-COMPONENTS
+				►TIME		
+					COLOR		: rgb(134, 176, 242)	rgb(155, 160, 166)
+
+				►TOGGLE-BUTTON	 
+					COLOR		: rgb(134, 176, 242)	rgb(185, 188, 193)
+					SHADOW-COLOR	: rgb(84, 106, 142)	rgb(122, 123, 127)
+
+				►DAYS
+					COLOR		: rgb(134, 176, 242)	rgb(158, 159, 162)
+					BACKGROUND	: rgb(65, 76, 94)	rgb(70, 71, 75)
+					BACKGROUND-	: transparent		none
+					UNSELECTED
+
+				►COMMON ELEMENTS TEXT
+					COLOR		: rgb(255, 255, 255)	rgb(255, 255, 255)
+					COLOR-		: rgb(182, 182, 186)	rgb(182, 182, 186)
+					UNSELECTED
+
+				►COMMON ELEMENTS UP BUTTON 
+					COLOR		: rgb(255, 255, 255)	rgb(255, 255, 255)
+
+
+
+
+Agregrar un shadow a todos los over selected
+63,64,66

@@ -1,0 +1,525 @@
+/* **********     Reset CSS     ********** */
+:root {
+  --main-font: sans-serif;
+
+  /* ******* COMPONENTS ******* */
+  /* ♣ BODY */
+  --body-background: rgb(32, 33, 37);
+  --body-color: rgb(87, 89, 92);
+
+  /* ♣ MENU */
+  --menu-background: rgb(54, 55, 59);
+  --menu-color: rgb(191, 192, 195);
+  --menu-selected-color: rgb(134, 180, 249);
+
+  /* ♣ MESSAGE */
+  --message-background: rgb(50, 50, 50);
+  --message-color: rgb(255, 255, 255);
+
+  /* ♣ BUTTON */
+  --button-background: rgb(137, 180, 248);
+  --button-color: rgb(31, 23, 12);
+
+  /* ♣ TOP */
+  --top-background: transparent;
+  --top-color: rgb(255, 255, 255);
+  --top-scrolled-background: rgb(50, 51, 54);
+
+  /* ♣ MODAL */
+  --modal-background: rgb(48, 48, 48);
+	--modal-color: rgb(155, 160, 166);
+	--modal-selected-color: rgb(255, 255, 255);
+    /* *** SUB-COMPONENTS *** */
+      /* ► BUTTON	*/
+      --button-color: rgb(31, 23, 12);
+      --button-background: transparent;
+
+  /* ♣ SECTION */
+    /* WHEN IS MINIMIZED = m */
+    --m-section-background: transparent;
+      /* *** SUB-COMPONENTS *** */
+        /* ► COMMON-ELEMENTS-TEXT = cet */
+        --m-cet-color-active: rgb(255, 255, 255);
+        --m-cet-color-inactive: rgb(155, 160, 166);
+
+    /* WHEN IS MAXIMIZED = M*/
+    --M-section-background: rgb(42, 43, 47);
+    /* *** SUB-COMPONENTS *** */
+      /* ► COMMON-ELEMENTS-TEXT = cet */
+      --M-cet-color: rgb(255, 255, 255);
+      --M-cet-unselected-color: rgb(182, 182, 182);
+
+      /* ► DAYS */
+      --M-days-color-active: rgb(134, 176, 242);
+      --M-days-color-inactive: rgb(158, 159, 193);
+      --M-days-background-active: rgb(65, 76, 94);
+      --M-days-background-inactive: rgb(70, 71, 75);
+      --M-days-unselected-background: transparent;
+
+    /* SHARE MAXIMIZED AND MINIMIZED */
+    /* *** SUB-COMPONENTS *** */
+      /* ► TIME	*/
+      --mM-time-color-active: rgb(134, 176, 242);
+      --mM-time-color-inactive: rgb(155, 160, 166);
+
+      /* ► TOGGLE-BUTTON */
+      --mM-toggle-button-color-active: rgb(134, 176, 242);
+      --mM-toggle-button-color-inactive: rgb(185, 188, 193);
+      --mM-toggle-button-shadow-color-active: rgb(84, 106, 142);
+      --mM-toggle-button-shadow-color-inactive: rgb(122, 123, 127);
+
+      /* ► COMMON-ELEMENTS-DOWN-UP-BUTTON = cedub	*/
+      --mM-cedub-color: rgb(255, 255, 255);
+
+  /* ******* SIZES ******* */
+  --zero-size: 3rem;
+  --first-size: 2.5rem;
+  --second-size: 2rem;
+  --third-size: 1.5rem;
+  --fourth-size: 1rem;
+
+  /* ******* EXTRAS ******* */
+    /* *** SWITCH *** */
+    --btn-content-point: 4px;
+    --btn-width: 2.5rem;
+
+    /* *** CHECKBOX *** */
+    --btn-checkbox-size: 1rem;
+
+    /* *** BUTTON-DAY *** */
+    --btn-day-size:2rem;
+    --btn-day-space-between:1rem;
+
+  --container-width: 1200px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--body-background);
+  color: var(--body-color);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+hr{
+  margin-bottom: 1.5rem;
+  margin-top: .5rem;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(182, 182, 182,.3);
+}
+
+/* **********     UTILITIES     ********** */
+.section {
+  height: auto;
+  width: 100vw;
+}
+
+.sub-section {
+  padding: 1rem;
+  width: 100vw;
+}
+
+.sub-sub-section{
+  padding: 0 .5rem 1rem;
+}
+
+.block-two-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invisible{
+  /* ocultan pero mantienen sus espacio los elementos */
+  /* visibility: hidden;
+  opacity: 0; */
+  /* ocultan u no mantienen sus espacio los elementos */
+  display: none !important;
+}
+
+.visible{
+  visibility: visible;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: var(--btn-width);
+  height: calc(var(--btn-width) / 2 + var(--btn-content-point));
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--mM-toggle-button-shadow-color-inactive);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  --size: calc(var(--btn-width) / 2 - var(--btn-content-point));
+
+  position: absolute;
+  content: "";
+  height: var(--size);
+  width: var(--size);
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--mM-toggle-button-color-inactive);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--mM-toggle-button-shadow-color-active);
+}
+
+input:checked + .slider:before {
+  background-color: var(--mM-toggle-button-color-active);
+}
+
+input:checked + .slider:before {
+  --move: calc(var(--btn-width) / 2 - var(--btn-content-point));
+  -webkit-transform: translateX(var(--move));
+  -ms-transform: translateX(var(--move));
+  transform: translateX(var(--move));
+}
+
+/* Rounded sliders */
+.slider.round {
+  --border-radius: calc(var(--btn-width) / 2 + var(--btn-content-point));
+  border-radius: var(--border-radius);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.no-default{
+  color: var(--M-cet-unselected-color) !important;
+}
+
+.default{
+  color: var(--mM-cedub-color);
+}
+
+.no-show{
+  visibility: hidden;
+}
+
+.m1-top{
+  margin: 1rem 0 0;
+}
+
+.no-p-bottom{
+  padding-bottom: 0;
+}
+
+
+/* **********     OWN STYLES     ********** */
+/* *** MENU *** */
+header {
+  width: 100vw;
+  background-color: var(--menu-background);
+  padding: 1rem 0;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+.menu {
+  width: inherit;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu a {
+  color: var(--menu-color);
+  text-decoration: none;
+  font-size: var(--fourth-size);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a .svg {
+  fill: var(--menu-color);
+  margin-bottom: 0.5rem;
+}
+
+/* *** CURRENTLY *** */
+.currently{
+  background-color: var(--top-background);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.currently h2{
+  color: var(--top-color);
+  font-size: var(--second-size);
+}
+
+/* *** ALARM *** */
+.alarm{
+  background-color: var(--M-section-background);
+}
+
+.particular-alarm{
+  padding-top: .5rem;
+ 
+}
+
+/* ►TIME SUB-SECCION */
+.particular-alarm .time{
+  font-size: var(--zero-size);
+}
+
+.time-active{
+  color: var(--mM-time-color-active);
+}
+
+.time-inactive{
+  color: var(--mM-time-color-inactive);
+}
+
+/* ►REPEAT SUB-SECCION */
+.repeat-checkbox{
+  position:relative;
+  
+  display: flex;
+  align-items: center;
+}
+
+.repeat-checkbox input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.repeat-checkbox .content .svg{
+  position: absolute;
+  cursor: pointer;
+  
+  width: var(--btn-checkbox-size);
+  height: var(--btn-checkbox-size);
+
+  border: 2px solid var(--M-cet-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  fill: var(--M-cet-color);
+}
+
+.repeat-checkbox .content span{
+  font-size: var(--fourth-size);
+  color: var(--M-cet-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-left: calc(var(--btn-checkbox-size) + .5rem);
+}
+
+.repeat-checkbox input:checked + .content .svg{
+  fill: var(--M-cet-unselected-color);
+  border: 2px solid var(--M-cet-unselected-color);
+}
+
+.repeat-checkbox input:checked + .content .svg path{
+  visibility: hidden;
+}
+
+.repeat-checkbox input:checked + .content span{
+  color: var(--M-cet-unselected-color);
+}
+
+.repeat-span-inactive{
+  color: var(--M-cet-unselected-color) !important;
+}
+
+.repeat-svg-inactive{
+  fill: var(--M-cet-unselected-color) !important;
+  border: 2px solid var(--M-cet-unselected-color) !important;
+}
+
+/* ►SELECTED-DAYS SUB-SECCION */
+.select-day-repeat{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-day-repeat .day {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.select-day-repeat .day input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.select-day-repeat .itemDay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  font-size: var(--fourth-size);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.select-day-repeat .day input:checked + .itemDay {
+  background-color: var(--M-days-unselected-background);
+}
+
+.day-active{
+  border: thin solid var(--M-days-background-active);
+  background-color: var(--M-days-background-active);
+  color: var(--M-days-color-active);
+}
+
+.day-inactive{
+  border: thin solid var(--M-days-background-inactive);
+  background-color: var(--M-days-background-inactive);
+  color: var(--M-days-color-inactive);
+}
+
+/* ►FOR ALL SUB-SECTIONS THAT JUST HAVE ICON AND ITS NAME*/
+.icon-tag{
+  display: flex;
+  color: var(--M-cet-color);
+  font-size: var(--fourth-size);
+  cursor: pointer;
+  outline: none;
+}
+
+.icon-tag .svg{
+  width: var(--fourth-size);
+  height: var(--fourth-size);
+  fill: var(--m-cet-color-active);
+}
+
+.inactive-icon-tag{
+  color: var(--M-cet-unselected-color);
+}
+
+.inactive-icon-tag .svg{
+  fill: var(--M-cet-unselected-color);
+}
+
+/* ►LAST ITEM*/
+.last-item{
+  padding-bottom: 0;
+}
+
+/* *** CLOCK *** */
+
+/* *** TIMER *** */
+
+/* *** CHRONOMETER *** */
+
+
+
+
+
+
+
+
+
+/* header {
+  width: 100vw;
+  background-color: var(--background-menu);
+  padding: 1rem 0;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+.menu {
+  width: inherit;
+  font-size: var(--main-font-size);
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu a {
+  color: var(--main-color);
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a .svg {
+  fill: var(--main-color);
+  display: block;
+  margin-bottom: 0.4rem;
+} */
+
+
+
